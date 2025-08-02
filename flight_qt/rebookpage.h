@@ -3,6 +3,8 @@
 
 #include "allSoure.h"
 #include "flightcard.h"
+#include "dbhelper.h"
+#include "flighticon.h"
 #include <QScrollArea>
 #include <QWidget>
 
@@ -27,8 +29,6 @@ private slots:
 private:
     // 加载日期按钮的方法，接受一个基准日期
     void loadDateButtons(const QDate &baseDate);
-
-    QIcon selectImg(const QString& airline);
 
     QVBoxLayout *layout;
     // 出发地和目的地标签

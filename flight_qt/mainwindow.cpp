@@ -53,13 +53,10 @@ void MainWindow::login(){
 
     //连接数据库
     QSqlDatabase db;
-    if(QSqlDatabase::contains("login_connection")){
-        db = QSqlDatabase::database("login_connection");
+    if(QSqlDatabase::contains("flight_connection")){
+        db = QSqlDatabase::database("flight_connection");
     }else{
-        db = QSqlDatabase::addDatabase("QODBC","login_connection");
-        db.setDatabaseName(DSN);
-        db.setUserName(DB_USER);
-        db.setPassword(DB_PASSWORD);
+        db = DBHelper::getConnection();
     }
 
     if(!db.open()){
@@ -87,16 +84,27 @@ void MainWindow::login(){
 }
 
 void MainWindow::showRegisterPage(){
+    ui->registerUsername->setText("");
+    ui->registerPassword->setText("");
+    ui->registerComfirPass->setText("");
+    ui->comfirProblem->setText("");
     ui->stackedWidget->setCurrentIndex(1);
 }
 
 
 
 void MainWindow::showForgetPage(){
+    ui->forgetUsername->setText("");
+    ui->forgetPassword->setText("");
+    ui->forgetComfirPassword->setText("");
+    ui->forgetProblem->setText("");
     ui->stackedWidget->setCurrentIndex(2);
 }
 
 void MainWindow:: backLogin(){
+    //重置信息
+    ui->username->setText("");
+    ui->password->setText("");
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -120,13 +128,10 @@ void MainWindow::registerUser(){
     //qDebug()<<username;
     //连接数据库
     QSqlDatabase db;
-    if(QSqlDatabase::contains("login_connection")){
-        db = QSqlDatabase::database("login_connection");
+    if(QSqlDatabase::contains("flight_connection")){
+        db = QSqlDatabase::database("flight_connection");
     }else{
-        db = QSqlDatabase::addDatabase("QODBC","login_connection");
-        db.setDatabaseName(DSN);
-        db.setUserName(DB_USER);
-        db.setPassword(DB_PASSWORD);
+        db = DBHelper::getConnection();
     }
 
     if(!db.open()){
@@ -186,13 +191,10 @@ void MainWindow::forgetUser(){
 
     //连接数据库
     QSqlDatabase db;
-    if(QSqlDatabase::contains("login_connection")){
-        db = QSqlDatabase::database("login_connection");
+    if(QSqlDatabase::contains("flight_connection")){
+        db = QSqlDatabase::database("flight_connection");
     }else{
-        db = QSqlDatabase::addDatabase("QODBC","login_connection");
-        db.setDatabaseName(DSN);
-        db.setUserName(DB_USER);
-        db.setPassword(DB_PASSWORD);
+        db = DBHelper::getConnection();
     }
 
     if(!db.open()){

@@ -5,6 +5,7 @@
 #include <QMainWindow>
 #include <QPropertyAnimation>
 #include "searchpage.h"
+#include "dbhelper.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

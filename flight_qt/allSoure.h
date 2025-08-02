@@ -22,11 +22,6 @@
 #include <QPainter>
 #include <QIcon>
 
-
-// MySQL 连接信息
-extern const QString DSN;
-extern const QString DB_USER;
-extern const QString DB_PASSWORD;
 //现在登录的用户名
 extern QString curentUsername;
 

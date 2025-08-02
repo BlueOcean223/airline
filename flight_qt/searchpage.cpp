@@ -66,11 +66,13 @@ void searchPage::searchTicket(){
         QMessageBox::warning(this,"警告","请选择不同的出发地和目的地！");
         return;
     }
-    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC"); // 使用唯一的连接名称
-    db.setDatabaseName(DSN);
-    db.setUserName(DB_USER);
-    db.setPassword(DB_PASSWORD);
-    db.setConnectOptions("CLIENT_ENCODING=UTF8");
+    QSqlDatabase db;
+    if (QSqlDatabase::contains("flight_connection")){
+        db = QSqlDatabase::database("flight_connection");
+    }else {
+        db = DBHelper::getConnection();
+    }
+
 
     if (!db.open()) {
         QMessageBox::critical(this, "数据库连接失败", db.lastError().text());

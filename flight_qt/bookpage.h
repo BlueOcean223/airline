@@ -5,6 +5,8 @@
 #include "allSoure.h"
 #include "myticketpage.h"
 #include "flightcard.h"
+#include "dbhelper.h"
+#include "flighticon.h"
 
 // 乘客信息对话框
 class Passenger : public QDialog {
@@ -109,8 +111,6 @@ private slots:
 private:
     // 加载日期按钮的方法，接受一个基准日期
     void loadDateButtons(const QDate &baseDate);
-
-    QIcon selectImg(const QString& airline);
 
     QTableWidget *flightTable;
     QVBoxLayout *layout;

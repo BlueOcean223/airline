@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "allSoure.h"
+#include "flighticon.h"
 
 namespace Ui {
 class boughtCard;
@@ -15,7 +16,6 @@ class boughtCard : public QWidget
 public:
     explicit boughtCard(const Flight& flight,QWidget *parent = nullptr);
     ~boughtCard();
-    QIcon selectImg(const QString& airline);
 signals:
     void tuiTicket();
     void gaiTicket();

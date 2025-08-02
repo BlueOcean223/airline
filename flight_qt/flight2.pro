@@ -12,7 +12,9 @@ SOURCES += \
     allSoure.cpp \
     bookpage.cpp \
     boughtcard.cpp \
+    dbhelper.cpp \
     flightcard.cpp \
+    flighticon.cpp \
     main.cpp \
     mainwindow.cpp \
     myswapbutton.cpp \
@@ -24,7 +26,9 @@ HEADERS += \
     allSoure.h \
     bookpage.h \
     boughtcard.h \
+    dbhelper.h \
     flightcard.h \
+    flighticon.h \
     mainwindow.h \
     myswapbutton.h \
     myticketpage.h \

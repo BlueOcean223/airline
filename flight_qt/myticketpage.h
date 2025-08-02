@@ -5,6 +5,8 @@
 #include "boughtcard.h"
 #include "rebookpage.h"
 #include <QWidget>
+#include "dbhelper.h"
+#include "flighticon.h"
 
 class MyTicketPage:public QWidget
 {
@@ -19,7 +21,6 @@ private slots:
 
     void cancelTicket(const Flight& flight);
     void addBoughtCard(const QList<Flight>& userflights);
-    QIcon selectImg(const QString& airline);
 private:
     QTableWidget *ticketTable;
     QVBoxLayout *flightLabel;
